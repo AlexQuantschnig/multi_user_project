@@ -17,26 +17,6 @@
                 <role>Student</role>
             </roles>
         </developer>
-        <developer>
-            <id>susannejandl</id>
-            <name>Susanne Jandl</name>
-            <email>susanne.jandl@edu.fh-joanneum.at</email>
-            <organization>FH JOANNEUM GmbH</organization>
-            <organizationUrl>https://www.fh-joanneum.at</organizationUrl>
-            <roles>
-                <role>Student</role>
-            </roles>
-        </developer>
-        <developer>
-            <id>stefanjovic</id>
-            <name>Stefan Jovic</name>
-            <email>stefan.jovic@edu.fh-joanneum.at</email>
-            <organization>FH JOANNEUM GmbH</organization>
-            <organizationUrl>https://www.fh-joanneum.at</organizationUrl>
-            <roles>
-                <role>Student</role>
-            </roles>
-        </developer>
     </developers>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
