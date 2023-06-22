@@ -1,6 +1,9 @@
+*.html
+*.pdf
 .idea
 target
 .DS_Store
 *.log
 log4j2.xml
 logs
+multi_user
