@@ -1,5 +1,12 @@
 # multi_user_project #
 
+## Description ##
+
+This project was created to experience team work using GitHub.
+The team members organize the tasks and create different working branches.
+In the end all branches are merged to the main branch.
+A maven site is created, where you can find further information.
+
 ## Group Members ##
 
 * Alex Quantschnig
