@@ -18,7 +18,7 @@
                 <role>Student</role>
             </roles>
         </developer>
-        <!-- <developer>
+        <developer>
             <id>susannejandl</id>
             <name>Susanne Jandl</name>
             <email>susanne.jandl@edu.fh-joanneum.at</email>
@@ -28,7 +28,7 @@
                 <role>Student</role>
             </roles>
         </developer>
-        <developer>
+        <!-- <developer>
             <id>stefanjovic</id>
             <name>Stefan Jovic</name>
             <email>stefan.jovic@edu.fh-joanneum.at</email>
