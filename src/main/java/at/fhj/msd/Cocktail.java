@@ -19,8 +19,8 @@ public class Cocktail extends Drink {
     @Override
     public double getVolume() {
         double volume = 0;
-        for(int i = 0; i < liquids.size(); i++) {
-            volume += liquids.get(i).getVolume();
+        for (Liquid liquid : liquids) {
+            volume += liquid.getVolume();
         }
         return volume;
     }
@@ -28,8 +28,8 @@ public class Cocktail extends Drink {
     @Override
     public double getAlcoholPercent() {
         double alcPercent = 0;
-        for(int i = 0; i < liquids.size(); i++) {
-            alcPercent += liquids.get(i).getAlcoholPercent()*liquids.get(i).getVolume();
+        for (Liquid liquid : liquids) {
+            alcPercent += liquid.getAlcoholPercent() * liquid.getVolume();
         }
         return alcPercent/getVolume();
     }

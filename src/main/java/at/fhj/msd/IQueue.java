@@ -1,35 +1,34 @@
 package at.fhj.msd;
-
-// fastly written (not really nice) comments you should adapt
 public interface IQueue {
-  /** 
-   * I am a really bad comment
-   * 
-   * fasdfadsffdsadsf
-   * 
-   * fdsasdfadsf
-   * 
-   *  add object to queue, true if okay 
-   * 
-   * i fell asleep on my keyboard...
-   * 
-   * */ 
+
+  /**
+   * Adds the element obj to the queue.
+   * @param obj  element to be added
+   * @return true if element has been added, otherwise false
+   */
   public abstract boolean offer(String obj);
 
-  //returns + del 1st element; null if nothing in there
-   //
+  /**
+   * Returns the head (first) element and also deletes it.
+   * @return element or null
+   */
   public abstract String poll();
 
-  /* 
-  same as poll, if there is nothing in there error NoSuchElementException
+  /**
+   * Returns the head (first) element and also deletes it.
+   * @return head element of the queue if there are any, otherwise throw NoSuchElementException
    */
   public abstract String remove();
 
-  // 1st element without dlete, otherwise null
-   
+  /**
+   * Returns the head (first) element, but it does not delete it.
+    * @return head element of the queue if there are any, otherwise null
+   */
   public abstract String peek();
 
-  // element is to peek what remove is to poll
-  
+  /**
+   * It works similar to peek() but throws NoSuchElementException if there is no element to return
+   * @return head element of the queue
+   */
   public abstract String element();
 }
