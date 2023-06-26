@@ -53,7 +53,7 @@ A colon and then the first name of the group member who accomplished the task co
 - [ ] bug_hunt:
 
 
-- [ ] drink:
+- [x] drink: Susanne
 
 
 - [ ] queue:
