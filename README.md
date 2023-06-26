@@ -64,7 +64,7 @@ A colon and then the first name of the group member who accomplished the task co
 - [ ] javadoc - class DoubleQueue:
 
 
-- [ ] tests:
+- [x] tests - class Cocktail: Susanne
 
 
 - [ ] double_queue:
