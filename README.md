@@ -30,7 +30,7 @@ To use the different classes and to view the maven site documentation you will n
 
 ## Task List ##
 
-### Description ###
+### Task Description ###
 
 A task start with a checked or unchecked box, followed by the name of the branch.
 Details are added after a minus (optional).
@@ -38,45 +38,34 @@ A colon and then the first name of the group member who accomplished the task co
 
 ### Tasks ###
 
-- [x] maven: Alex
-
-
-- [x] readme: Susanne
-
-
-- [x] maven_detail - update pom.xml: Alex
-- [x] maven_detail - add developer information: Alex
-- [x] maven_detail - add developer information: Stefan
-- [x] maven_detail - add developer information: Susanne
-
-
-- [x] bug_hunt: Alex
-
-
-- [x] drink: Susanne
-
-
-- [ ] queue:
-
-
-- [x] javadoc - class Cocktail:
-- [x] javadoc - class DrinkQueue:
-- [ ] javadoc - class DoubleQueue:
-
-
-- [x] tests - class Cocktail: Susanne
-
-
-- [ ] double_queue:
-
-
-- [ ] maven_site - create maven site (site.xml):
-- [ ] maven_site - create own member.md: Alex
-- [ ] maven_site - create own member.md: Stefan
-- [ ] maven_site - create own member.md: Susanne
+* [x] maven: Alex
+* [x] maven_detail - update pom.xml: Alex
+* [x] maven_detail - add developer information: Alex
+* [x] maven_detail - add developer information: Stefan
+* [x] readme: Susanne
+* [x] maven_detail - add developer information: Susanne
+* [x] drink: Susanne
+* [x] bug_hunt: Alex
+* [x] queue - class: Stefan
+* [x] javadoc - class Cocktail: Stefan
+* [x] javadoc - class DrinkQueue: Stefan
+* [x] javadoc - class DoubleQueue: Stefan
+* [x] javadoc - test cases: Stefan
+* [x] tests - class Cocktail: Susanne
+* [x] tests - class DoubleQueue: Alex
+* [x] tests - class Drink: Alex
+* [x] tests - class DrinkQueue: Alex
+* [x] tests - class Liquid: Alex
+* [x] tests - class SimpleDrink: Alex
+* [x] tests - class StringQueue: Stefan
+* [x] DoubleQueue: Stefan
+* [x] maven_site - create maven site (site.xml): Alex
+* [x] maven_site - create own member.md: Alex
+* [x] maven_site - create own member.md: Susanne
+* [x] maven_detail - add developer information: Stefan
 
 ## Author information ##
 
-* Alex Quantschnig: alex.quantschnig@edu.fh-joanneum.at
-* Stefan Jovic: stefen.jovic@edu.fh-joanneum.at
-* Susanne Jandl: susanne.jand@edu.fh-joanneum.at
+* Alex Quantschnig: <alex.quantschnig@edu.fh-joanneum.at>
+* Stefan Jovic: <stefen.jovic@edu.fh-joanneum.at>
+* Susanne Jandl: <susanne.jand@edu.fh-joanneum.at>
