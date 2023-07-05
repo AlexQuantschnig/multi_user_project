@@ -59,8 +59,8 @@ A colon and then the first name of the group member who accomplished the task co
 - [ ] queue:
 
 
-- [ ] javadoc - class Cocktail:
-- [ ] javadoc - class DrinkQueue:
+- [x] javadoc - class Cocktail:
+- [x] javadoc - class DrinkQueue:
 - [ ] javadoc - class DoubleQueue:
 
 
