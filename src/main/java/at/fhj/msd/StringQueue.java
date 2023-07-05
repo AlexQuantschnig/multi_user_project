@@ -89,20 +89,4 @@ public class StringQueue implements IQueue {
 
     return element;
   }
-
-  /**
-   * Returns the list of elements in the queue
-   * @return elements The list of all elements
-   */
-  public List<String> getElements() {
-    return elements;
-  }
-
-  /**
-   * Returns maximum size of the list
-   * @return maxSize The mximum size of the list
-   */
-  public int getMaxSize() {
-    return maxSize;
-  }
 }

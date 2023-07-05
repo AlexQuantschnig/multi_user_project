@@ -3,8 +3,10 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
+import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class DoubleQueueTest {
     private DoubleQueue doubleQueue;
@@ -41,6 +43,7 @@ public class DoubleQueueTest {
 
         Assertions.assertEquals(3.14, doubleQueue.remove(), 0.001);
         Assertions.assertEquals(2.71, doubleQueue.remove(), 0.001);
+        assertThrows(NoSuchElementException.class, () -> doubleQueue.remove());
     }
 
     @Test
@@ -57,6 +60,7 @@ public class DoubleQueueTest {
 
     @Test
     public void testElement() {
+        assertThrows(NoSuchElementException.class, () -> doubleQueue.element());
         doubleQueue.offer(3.14);
         doubleQueue.offer(2.71);
 
@@ -65,15 +69,4 @@ public class DoubleQueueTest {
         Assertions.assertEquals(2.71, doubleQueue.element(), 0.001);
     }
 
-    @Test
-    public void testGetDoubles() {
-        doubleQueue.offer(3.14);
-        doubleQueue.offer(2.71);
-
-        ArrayList<Double> expected = new ArrayList<>();
-        expected.add(3.14);
-        expected.add(2.71);
-
-        Assertions.assertEquals(expected, doubleQueue.getDoubles());
-    }
 }

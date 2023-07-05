@@ -1,62 +1,93 @@
 package at.fhj.msd;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.NoSuchElementException;
 
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
 public class StringQueueTest {
-    private StringQueue queue;
 
-    @BeforeEach
-    public void setUp(){
-        queue = new StringQueue(3);
+    @Test
+    public void testOffer() {
+        StringQueue queue = new StringQueue(3);
+
+        Assertions.assertTrue(queue.offer("A"));
+        Assertions.assertTrue(queue.offer("B"));
+        Assertions.assertTrue(queue.offer("C"));
+        Assertions.assertFalse(queue.offer("D"));
     }
 
     @Test
-    public void testOffer(){
-        queue.offer("A");
-        queue.offer("A");
-        queue.offer("A");
+    public void testPoll() {
+        StringQueue queue = new StringQueue(3);
 
-        Assertions.assertFalse(queue.offer("A"));
-
-    }
-
-    @Test
-    public void testPeek(){
         queue.offer("A");
         queue.offer("B");
-        Assertions.assertEquals("A", queue.peek());
-    }
-
-    @Test
-    public void testRemove(){
-        queue.offer("A");
-        queue.offer("B");
-        Assertions.assertEquals("A", queue.remove());
-
-        queue.remove();
-        assertThrows(NoSuchElementException.class,()->queue.remove());
-    }
-
-    @Test
-    public void testPoll(){
-        queue.offer("A");
-        queue.offer("B");
+        queue.offer("C");
 
         Assertions.assertEquals("A", queue.poll());
+        Assertions.assertEquals("B", queue.poll());
+        Assertions.assertEquals("C", queue.poll());
+        Assertions.assertNull(queue.poll());
     }
 
     @Test
-    public void testElement(){
+    public void testRemove() {
+        StringQueue queue = new StringQueue(3);
+
         queue.offer("A");
         queue.offer("B");
+        queue.offer("C");
 
-        Assertions.assertEquals("A",queue.element());
+        Assertions.assertEquals("A", queue.remove());
+        Assertions.assertEquals("B", queue.remove());
+        Assertions.assertEquals("C", queue.remove());
+        try {
+            queue.remove();
+            Assertions.fail("Expected NoSuchElementException was not thrown");
+        } catch (NoSuchElementException e) {
+            // Exception caught as expected
+        }
     }
 
+    @Test
+    public void testPeek() {
+        StringQueue queue = new StringQueue(3);
+
+        queue.offer("A");
+        queue.offer("B");
+        queue.offer("C");
+
+        Assertions.assertEquals("A", queue.peek());
+        Assertions.assertEquals("A", queue.peek());
+        queue.remove();
+        Assertions.assertEquals("B", queue.peek());
+        queue.remove();
+        Assertions.assertEquals("C", queue.peek());
+        queue.remove();
+        Assertions.assertNull(queue.peek());
+    }
+
+    @Test
+    public void testElement() {
+        StringQueue queue = new StringQueue(3);
+
+        queue.offer("A");
+        queue.offer("B");
+        queue.offer("C");
+
+        Assertions.assertEquals("A", queue.element());
+        Assertions.assertEquals("A", queue.element());
+        queue.remove();
+        Assertions.assertEquals("B", queue.element());
+        queue.remove();
+        Assertions.assertEquals("C", queue.element());
+        queue.remove();
+        try {
+            queue.element();
+            Assertions.fail("Expected NoSuchElementException was not thrown");
+        } catch (NoSuchElementException e) {
+            // Exception caught as expected
+        }
+    }
 }
