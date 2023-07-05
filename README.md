@@ -38,19 +38,19 @@ A colon and then the first name of the group member who accomplished the task co
 
 ### Tasks ###
 
-- [ ] maven: Alex
+- [x] maven: Alex
 
 
 - [x] readme: Susanne
 
 
-- [ ] maven_detail - update pom.xml: Alex
-- [ ] maven_detail - add developer information: Alex
-- [ ] maven_detail - add developer information: Stefan
-- [ ] maven_detail - add developer information: Susanne
+- [x] maven_detail - update pom.xml: Alex
+- [x] maven_detail - add developer information: Alex
+- [x] maven_detail - add developer information: Stefan
+- [x] maven_detail - add developer information: Susanne
 
 
-- [ ] bug_hunt:
+- [x] bug_hunt: Alex
 
 
 - [x] drink: Susanne
@@ -59,8 +59,8 @@ A colon and then the first name of the group member who accomplished the task co
 - [ ] queue:
 
 
-- [ ] javadoc - class Cocktail:
-- [ ] javadoc - class DrinkQueue:
+- [x] javadoc - class Cocktail:
+- [x] javadoc - class DrinkQueue:
 - [ ] javadoc - class DoubleQueue:
 
 
