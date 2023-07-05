@@ -8,13 +8,22 @@ import java.util.NoSuchElementException;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class DrinkQueueTest {
+    /**
+     * Test cases for the DrinkQueue class
+     */
     private DrinkQueue drinkQueue;
 
+    /**
+     * Set up the test data befor each test case
+     */
     @BeforeEach
     public void setup() {
         drinkQueue = new DrinkQueue();
     }
 
+    /**
+     * Tests if the drinks are added to the queue
+     */
     @Test
     public void testOffer() {
         SimpleDrink simpleDrink = new SimpleDrink("Vodka", new Liquid("Vodka", 0.02, 40));
@@ -24,7 +33,9 @@ public class DrinkQueueTest {
         Assertions.assertTrue(drinkQueue.offer(cocktail));
         Assertions.assertFalse(drinkQueue.offer(simpleDrink));
     }
-
+    /**
+     * Test if the drinks are poll right and have been deleted after polling
+     */
     @Test
     public void testPoll() {
         SimpleDrink simpleDrink = new SimpleDrink("Vodka", new Liquid("Vodka", 0.02, 40));
@@ -37,7 +48,9 @@ public class DrinkQueueTest {
         Assertions.assertEquals(cocktail, drinkQueue.poll());
         Assertions.assertNull(drinkQueue.poll());
     }
-
+    /**
+     * Tests if the drinks will be right removed from the queue
+     */
     @Test
     public void testRemove() {
         SimpleDrink simpleDrink = new SimpleDrink("Vodka", new Liquid("Vodka", 0.02, 40));
@@ -50,7 +63,9 @@ public class DrinkQueueTest {
         Assertions.assertEquals(cocktail, drinkQueue.remove());
         assertThrows(NoSuchElementException.class, () -> drinkQueue.remove());
     }
-
+    /**
+     * Tests if the drinks are right peeked , without deleting it
+     */
     @Test
     public void testPeek() {
         SimpleDrink simpleDrink = new SimpleDrink("Vodka", new Liquid("Vodka", 0.02, 40));
@@ -65,7 +80,9 @@ public class DrinkQueueTest {
         drinkQueue.poll();
         Assertions.assertNull(drinkQueue.peek());
     }
-
+    /**
+     * Tests if the drinks are right peeked , without deleting it
+     */
     @Test
     public void testElement() {
         SimpleDrink simpleDrink = new SimpleDrink("Vodka", new Liquid("Vodka", 0.02, 40));
@@ -80,7 +97,9 @@ public class DrinkQueueTest {
         drinkQueue.poll();
         assertThrows(NoSuchElementException.class, () -> drinkQueue.element());
     }
-
+    /**
+     * Tests if the queue contains all elements
+     */
     @Test
     public void testGetDrinks() {
         SimpleDrink simpleDrink = new SimpleDrink("Vodka", new Liquid("Vodka", 0.02, 40));

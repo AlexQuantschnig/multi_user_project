@@ -2,8 +2,14 @@ package at.fhj.msd;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Test case for the SimpleDrink class
+ */
 public class SimpleDrinkTest {
 
+    /**
+     * Test case to verify the properties of the SimpleDrink class
+     */
     @Test
     public void testSimpleDrinkProperties() {
         String drinkName = "Mojito";

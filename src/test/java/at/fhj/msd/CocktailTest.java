@@ -5,7 +5,9 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import java.util.ArrayList;
 
-
+/**
+ * Test class for the Cocktail class
+ */
 public class CocktailTest {
 
     Cocktail cocktail;
@@ -14,6 +16,9 @@ public class CocktailTest {
     ArrayList<Liquid> pinaColada = new ArrayList<>();
     ArrayList<Liquid> orangeFizz = new ArrayList<>();
 
+    /**
+     * Set up the test data befor each test case
+     */
 
     @BeforeEach
     public void setUp() {
@@ -39,6 +44,9 @@ public class CocktailTest {
         orangeFizz.add(new Liquid("sparkling water", 0.1, 0));
     }
 
+    /**
+     * Testcase for calculating the volume of the cocktail called "Sex on the Beach"
+     */
     @Test
     public void testGetVolumeSexOnTheBeach() {
 
@@ -47,6 +55,10 @@ public class CocktailTest {
         double result = cocktail.getVolume();
         assertEquals(0.36, result, 0.001);
     }
+
+    /**
+     * Testcase for calculating the volume of the cocktail called "Margarita"
+     */
     @Test
     public void testGetVolumeMargarita() {
 
@@ -55,6 +67,10 @@ public class CocktailTest {
         double result = cocktail.getVolume();
         assertEquals(0.08, result, 0.001);
     }
+
+    /**
+     * Testcase for calculating the volume of the cocktail called "Pina Colada"
+     */
     @Test
     public void testGetVolumePinaColada() {
 
@@ -63,6 +79,9 @@ public class CocktailTest {
         double result = cocktail.getVolume();
         assertEquals(0.21, result, 0.001);
     }
+    /**
+     * Testcase for calculating the volume of the cocktail called "Orange Fizz"
+     */
     @Test
     public void testGetVolumeOrangeFizz() {
 
@@ -71,6 +90,9 @@ public class CocktailTest {
         double result = cocktail.getVolume();
         assertEquals(0.23, result, 0.001);
     }
+    /**
+     * Testcase for calculating the alcohol percentage of the cocktail called "Sex on the Beach"
+     */
 
     @Test
     public void testGetAlcoholPercentSexOnTheBeach() {
@@ -80,6 +102,9 @@ public class CocktailTest {
         double result = Math.round(cocktail.getAlcoholPercent()*100)/100.0;
         assertEquals(5.56, result, 0.001);
     }
+    /**
+     * Testcase for calculating the alcohol percentage of the cocktail called "Margarita"
+     */
     @Test
     public void testGetAlcoholPercentMargarita() {
 
@@ -88,6 +113,9 @@ public class CocktailTest {
         double result = Math.round(cocktail.getAlcoholPercent()*100)/100.0;
         assertEquals(25.63, result, 0.001);
     }
+    /**
+     * Testcase for calculating the alcohol percentage of the cocktail called "Pina Colada"
+     */
     @Test
     public void testGetAlcoholPercentPinaColada() {
 
@@ -96,6 +124,9 @@ public class CocktailTest {
         double result = Math.round(cocktail.getAlcoholPercent()*100)/100.0;
         assertEquals(10.86, result, 0.001);
     }
+    /**
+     * Testcase for calculating the alcohol percentage of the cocktail called "Orange Fizz"
+     */
     @Test
     public void testGetAlcoholPercentOrangeFizz() {
 
@@ -104,6 +135,9 @@ public class CocktailTest {
         double result = Math.round(cocktail.getAlcoholPercent()*100)/100.0;
         assertEquals(0, result, 0.001);
     }
+    /**
+     * Testcase for checking if the cocktail contains alcohol "Sex on the Beach"
+     */
 
     @Test
     public void testIsAlcoholicSexOnTheBeach() {
@@ -111,6 +145,9 @@ public class CocktailTest {
         cocktail = new Cocktail("Sex on the Beach", sexOnTheBeach);
         assertTrue(cocktail.isAlcoholic());
     }
+    /**
+     * Testcase for checking if the cocktail contains alcohol "Margarita"
+     */
     @Test
     public void testIsAlcoholicMargarita() {
 
@@ -118,6 +155,9 @@ public class CocktailTest {
 
         assertTrue(cocktail.isAlcoholic());
     }
+    /**
+     * Testcase for checking if the cocktail contains alcohol "Pina Colada"
+     */
     @Test
     public void testIsAlcoholicPinaColada() {
 
@@ -125,6 +165,9 @@ public class CocktailTest {
 
         assertTrue(cocktail.isAlcoholic());
     }
+    /**
+     * Testcase for checking if the cocktail contains alcohol "Orange Fizz"
+     */
     @Test
     public void testIsAlcoholicOrangeFizz() {
 
