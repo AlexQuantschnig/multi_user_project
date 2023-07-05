@@ -1,78 +1,104 @@
 package at.fhj.msd;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.NoSuchElementException;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
-/**
- * Test cases for the StringQueue class
- */
 public class StringQueueTest {
-    private StringQueue queue;
-
-    /**
-     * Sets up the values befor every test case
-     */
-    @BeforeEach
-    public void setUp(){
-        queue = new StringQueue(3);
-    }
 
     /**
      * Tests if values are added to the queue
      */
     @Test
-    public void testOffer(){
-        queue.offer("A");
-        queue.offer("A");
-        queue.offer("A");
+    public void testOffer() {
+        StringQueue queue = new StringQueue(3);
 
-        Assertions.assertFalse(queue.offer("A"));
-
+        Assertions.assertTrue(queue.offer("A"));
+        Assertions.assertTrue(queue.offer("B"));
+        Assertions.assertTrue(queue.offer("C"));
+        Assertions.assertFalse(queue.offer("D"));
     }
     /**
      * Tests if the values are right peeked , without deleting it
      */
     @Test
-    public void testPeek(){
+    public void testPoll() {
+        StringQueue queue = new StringQueue(3);
+
         queue.offer("A");
         queue.offer("B");
-        Assertions.assertEquals("A", queue.peek());
+        queue.offer("C");
+
+        Assertions.assertEquals("A", queue.poll());
+        Assertions.assertEquals("B", queue.poll());
+        Assertions.assertEquals("C", queue.poll());
+        Assertions.assertNull(queue.poll());
     }
     /**
      * Tests if the values will be right removed from the queue
      */
     @Test
-    public void testRemove(){
+    public void testRemove() {
+        StringQueue queue = new StringQueue(3);
+
         queue.offer("A");
         queue.offer("B");
-        Assertions.assertEquals("A", queue.remove());
+        queue.offer("C");
 
-        queue.remove();
-        assertThrows(NoSuchElementException.class,()->queue.remove());
+        Assertions.assertEquals("A", queue.remove());
+        Assertions.assertEquals("B", queue.remove());
+        Assertions.assertEquals("C", queue.remove());
+        try {
+            queue.remove();
+            Assertions.fail("Expected NoSuchElementException was not thrown");
+        } catch (NoSuchElementException e) {
+            // Exception caught as expected
+        }
     }
     /**
      * Test if the values are poll right and have been deleted after polling
      */
 
     @Test
-    public void testPoll(){
+    public void testPeek() {
+        StringQueue queue = new StringQueue(3);
+
         queue.offer("A");
         queue.offer("B");
+        queue.offer("C");
 
-        Assertions.assertEquals("A", queue.poll());
+        Assertions.assertEquals("A", queue.peek());
+        Assertions.assertEquals("A", queue.peek());
+        queue.remove();
+        Assertions.assertEquals("B", queue.peek());
+        queue.remove();
+        Assertions.assertEquals("C", queue.peek());
+        queue.remove();
+        Assertions.assertNull(queue.peek());
     }
     /**
      * Tests if the values are right peeked , without deleting it
      */
     @Test
-    public void testElement(){
+    public void testElement() {
+        StringQueue queue = new StringQueue(3);
+
         queue.offer("A");
         queue.offer("B");
+        queue.offer("C");
 
-        Assertions.assertEquals("A",queue.element());
+        Assertions.assertEquals("A", queue.element());
+        Assertions.assertEquals("A", queue.element());
+        queue.remove();
+        Assertions.assertEquals("B", queue.element());
+        queue.remove();
+        Assertions.assertEquals("C", queue.element());
+        queue.remove();
+        try {
+            queue.element();
+            Assertions.fail("Expected NoSuchElementException was not thrown");
+        } catch (NoSuchElementException e) {
+            // Exception caught as expected
+        }
     }
-
 }

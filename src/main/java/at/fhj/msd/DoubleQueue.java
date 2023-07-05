@@ -78,11 +78,5 @@ public class DoubleQueue {
         }
         return nm;
     }
-    /**
-     * Gives the doubles from the array list
-     * @return drinks Array list of drinks
-     */
-    public ArrayList<Double> getDoubles() {
-        return doubles;
-    }
+
 }
