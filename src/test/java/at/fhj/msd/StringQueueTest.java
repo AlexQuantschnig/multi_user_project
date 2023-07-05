@@ -7,7 +7,7 @@ import java.util.NoSuchElementException;
 public class StringQueueTest {
 
     /**
-     * Tests if values are added to the queue
+     * Tests if values are added to the queue, otherwise the queue is full (returns false)
      */
     @Test
     public void testOffer() {
@@ -19,7 +19,7 @@ public class StringQueueTest {
         Assertions.assertFalse(queue.offer("D"));
     }
     /**
-     * Tests if the values are right peeked , without deleting it
+     * Tests if the values are right polled from the queue
      */
     @Test
     public void testPoll() {
@@ -36,6 +36,7 @@ public class StringQueueTest {
     }
     /**
      * Tests if the values will be right removed from the queue
+     * @throws NoSuchElementException if the queue is empty
      */
     @Test
     public void testRemove() {
@@ -56,7 +57,8 @@ public class StringQueueTest {
         }
     }
     /**
-     * Test if the values are poll right and have been deleted after polling
+     * Test if the values are peeked right
+     * @throws NoSuchElementException if the queue is empty
      */
 
     @Test
@@ -77,7 +79,8 @@ public class StringQueueTest {
         Assertions.assertNull(queue.peek());
     }
     /**
-     * Tests if the values are right peeked , without deleting it
+     * Tests element
+     * @throws NoSuchElementException if the queue is empty
      */
     @Test
     public void testElement() {
