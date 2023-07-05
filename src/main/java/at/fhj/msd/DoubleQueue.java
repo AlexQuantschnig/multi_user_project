@@ -3,13 +3,23 @@ package at.fhj.msd;
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
+/**
+ * Data structure: Queue string doubles
+ */
 public class DoubleQueue {
     private final ArrayList<Double> doubles;
 
+    /**
+     * Constructs a new DoubleQueue objects
+     */
     public DoubleQueue() {
         doubles = new ArrayList<>();
     }
-
+    /**
+     * Adds the element obj to the queue
+     * @parm nm Checks if the nm was added
+     * @return true if element has been added, otherwise false
+     */
     public boolean offer(Double nm) {
         if (doubles.contains(nm)) {
             return false;
@@ -18,6 +28,10 @@ public class DoubleQueue {
         return true;
     }
 
+    /**
+     * Returns the head (first) nm and also deletes it.
+     * @return nm or null
+     */
     public Double poll() {
         Double nm = peek();
         if (nm == null) {
@@ -26,7 +40,10 @@ public class DoubleQueue {
         doubles.remove(nm);
         return nm;
     }
-
+    /**
+     * Returns the head (first) nm and also deletes it.
+     * @return head nm of the queue if there are any, otherwise throw NoSuchElementException
+     */
     public Double remove() {
         Double nm = peek();
 
@@ -36,7 +53,10 @@ public class DoubleQueue {
         doubles.remove(nm);
         return nm;
     }
-
+    /**
+     * Returns the head (first) nm, but it does not delete it.
+     * @return head nm of the queue if there are any, otherwise null
+     */
     public Double peek() {
         Double nm;
         if (doubles.size() > 0) {
@@ -46,7 +66,10 @@ public class DoubleQueue {
         }
         return nm;
     }
-
+    /**
+     * It works similar to peek() but throws NoSuchElementException if there is no element to return
+     * @return head nm of the queue
+     */
     public Double element() {
         Double nm = peek();
 
@@ -55,7 +78,10 @@ public class DoubleQueue {
         }
         return nm;
     }
-
+    /**
+     * Gives the doubles from the array list
+     * @return drinks Array list of drinks
+     */
     public ArrayList<Double> getDoubles() {
         return doubles;
     }
