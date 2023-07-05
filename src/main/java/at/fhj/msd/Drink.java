@@ -44,4 +44,11 @@ public abstract class Drink {
     public void setName(String name) {
         this.name = name;
     }
+
+    @Override
+    public String toString() {
+        return "Drink{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }

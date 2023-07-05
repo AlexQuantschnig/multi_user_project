@@ -1,52 +1,67 @@
 package at.fhj.msd;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.ArrayList;
+import java.util.NoSuchElementException;
 
-public class DrinkQueue implements IQueue{
 
-    private LinkedList<Drink> drinks;
+public class DrinkQueue {
+
+    private final ArrayList<Drink> drinks;
 
     public DrinkQueue() {
-        drinks = new LinkedList<>();
+        drinks = new ArrayList<>();
     }
 
-    public void printDrinkQueue() {
-        for (Drink drink : drinks) {
-            System.out.println(drink.getName());
+    public boolean offer(Drink drink) {
+        if (drinks.contains(drink)) {
+            return false;
         }
-    }
-    public void addDrinks(Drink drink) {
         drinks.add(drink);
+        return true;
     }
-    public void removeDrink(Drink drink){
+
+    public Drink poll() {
+        Drink drink = peek();
+        if (drink == null) {
+            return null;
+        }
         drinks.remove(drink);
+        return drink;
     }
 
-    @Override
-    public boolean offer(String obj) {
-        return false;
+    public Drink remove() {
+        Drink drink = peek();
+
+        if (drink == null) {
+            throw new NoSuchElementException("No drink in the queue");
+        }
+        drinks.remove(drink);
+        return drink;
     }
 
-    @Override
-    public String poll() {
-        return null;
+    public Drink peek() {
+        Drink drink;
+        if (drinks.size() > 0) {
+            drink = drinks.get(0);
+        } else {
+            drink = null;
+        }
+        return drink;
     }
 
-    @Override
-    public String remove() {
-        return null;
+    public Drink element() {
+        Drink drink = peek();
+
+        if (drink == null) {
+            throw new NoSuchElementException("No drink in the queue");
+        }
+        return drink;
+    }
+    public ArrayList<Drink> getDrinks() {
+        return drinks;
     }
 
-    @Override
-    public String peek() {
-        return null;
-    }
 
-    @Override
-    public String element() {
-        return null;
-    }
 }
 
 
